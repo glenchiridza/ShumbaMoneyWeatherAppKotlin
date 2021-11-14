@@ -2,6 +2,7 @@ package com.glencconnnect.shumbamoneyweather
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.glencconnnect.shumbamoneyweather.adapters.WeatherRecyclerAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -17,6 +18,9 @@ class MainActivity : AppCompatActivity() {
         //setup recycler view
         adapter = WeatherRecyclerAdapter(this)
 
-        recycler_view.
+        val layoutManager = LinearLayoutManager(this)
+        recycler_view.layoutManager = layoutManager
+        recycler_view.adapter = adapter
+        recycler_view.setHasFixedSize(true)
     }
 }
