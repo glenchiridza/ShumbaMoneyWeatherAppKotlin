@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/curved_back">
+
+    <TextView
+        android:id="@+id/dv_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="Harare, ZW"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/dv_icon"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/dv_location"
+        app:layout_constraintStart_toStartOf="@+id/dv_location"
+        app:layout_constraintTop_toBottomOf="@+id/dv_location"
+        app:srcCompat="@drawable/sunny" />
+
+    <TextView
+        android:id="@+id/dv_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Tue ,11 Nov"
+        android:textColor="@color/white"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="@+id/dv_icon"
+        app:layout_constraintStart_toStartOf="@+id/dv_icon"
+        app:layout_constraintTop_toBottomOf="@+id/dv_icon" />
+
+    <TextView
+        android:id="@+id/dv_degrees"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="25"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display4"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/dv_date"
+        app:layout_constraintStart_toStartOf="@+id/dv_date"
+        app:layout_constraintTop_toBottomOf="@+id/dv_date" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+        android:text="Humidity"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toStartOf="@+id/textView6"
+        app:layout_constraintStart_toStartOf="@+id/dv_location"
+        app:layout_constraintTop_toBottomOf="@+id/dv_description" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:text="Pressure"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/dv_location"
+        app:layout_constraintStart_toEndOf="@+id/textView5"
+        app:layout_constraintTop_toTopOf="@+id/textView5" />
+
+    <TextView
+        android:id="@+id/dv_humidity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="83%"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/textView5"
+        app:layout_constraintStart_toStartOf="@+id/textView5"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <TextView
+        android:id="@+id/dv_pressure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="1020hpa"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/textView6"
+        app:layout_constraintStart_toStartOf="@+id/textView6"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+    <TextView
+        android:id="@+id/dv_weather_detail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="Feels like 25°C. Overcast clouds. Light air "
+        android:textColor="@color/white"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dv_humidity" />
+
+    <TextView
+        android:id="@+id/dv_day_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Night"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/dv_weather_detail"
+        app:layout_constraintStart_toStartOf="@+id/dv_weather_detail"
+        app:layout_constraintTop_toBottomOf="@+id/dv_weather_detail" />
+
+    <TextView
+        android:id="@+id/dv_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="HOT"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/dv_degrees"
+        app:layout_constraintStart_toStartOf="@+id/dv_degrees"
+        app:layout_constraintTop_toBottomOf="@+id/dv_degrees" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="Powered by open weather"
+        android:textColor="@color/white"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dv_day_time" />
+</androidx.constraintlayout.widget.ConstraintLayout>
