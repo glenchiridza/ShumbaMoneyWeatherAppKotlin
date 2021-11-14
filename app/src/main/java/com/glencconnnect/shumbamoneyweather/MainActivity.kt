@@ -14,6 +14,7 @@ class MainActivity : AppCompatActivity() {
 
 
     private lateinit var adapter:WeatherRecyclerAdapter
+    companion object {const val CHOICE_EXTRA = "CHOICE_EXTRA"}
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,9 +41,9 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         val id = item.itemId
         if (id == R.id.action_about) {
-            retrieveCredits()
+            retrieveInfo("action_about")
         } else if (id == R.id.action_credits) {
-            retrieveCredits()
+            retrieveInfo("action_credits")
         }
         return super.onOptionsItemSelected(item)
     }
@@ -53,8 +54,12 @@ class MainActivity : AppCompatActivity() {
         startActivity(Intent.createChooser(shareIntent, "Share App"))
     }
 
-    private fun retrieveCredits() {
+
+    //retrieve information on about and credits, pass in the extras depending on the chosen option and dynamicaly populate that single activity with the right data
+    //simply reusing the same AboutActiivty for two different options
+    private fun retrieveInfo(choice_extra:String) {
         val intent = Intent(this, AboutActivity::class.java)
+        intent.putExtra(CHOICE_EXTRA,choice_extra)
         startActivity(intent)
     }
 }
