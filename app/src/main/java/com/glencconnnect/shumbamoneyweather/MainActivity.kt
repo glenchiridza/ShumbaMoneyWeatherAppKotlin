@@ -51,15 +51,17 @@ class MainActivity : AppCompatActivity() {
     private fun shareIntent() {
         val shareIntent = Intent()
         shareIntent.action = Intent.ACTION_SEND
-        startActivity(Intent.createChooser(shareIntent, "Share App"))
+        shareIntent.type = "text/plain"
+        shareIntent.putExtra(Intent.EXTRA_TEXT, getString(R.string.extra_share_app_text))
+        startActivity(Intent.createChooser(shareIntent, "Share With"))
     }
 
 
     //retrieve information on about and credits, pass in the extras depending on the chosen option and dynamicaly populate that single activity with the right data
     //simply reusing the same AboutActiivty for two different options
-    private fun retrieveInfo(choice_extra:String) {
+    private fun retrieveInfo(choice_extra: String) {
         val intent = Intent(this, AboutActivity::class.java)
-        intent.putExtra(CHOICE_EXTRA,choice_extra)
+        intent.putExtra(CHOICE_EXTRA, choice_extra)
         startActivity(intent)
     }
 }
