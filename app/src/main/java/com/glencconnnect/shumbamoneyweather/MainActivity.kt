@@ -2,13 +2,20 @@ package com.glencconnnect.shumbamoneyweather
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.glencconnnect.shumbamoneyweather.adapters.WeatherRecyclerAdapter
+import com.glencconnnect.shumbamoneyweather.models.OuterContainer
+import com.glencconnnect.shumbamoneyweather.retrofit.RetrieveWeather
+import com.glencconnnect.shumbamoneyweather.retrofit.ServiceBuilder
 import com.glencconnnect.shumbamoneyweather.ui.AboutActivity
 import kotlinx.android.synthetic.main.activity_main.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -16,12 +23,16 @@ class MainActivity : AppCompatActivity() {
     private lateinit var adapter:WeatherRecyclerAdapter
     companion object {const val CHOICE_EXTRA = "CHOICE_EXTRA"}
 
+    private var weatherList: List<OuterContainer>? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+
+        weatherList = ArrayList()
         //setup recycler view
-        adapter = WeatherRecyclerAdapter(this)
+        adapter = weatherList?.let { WeatherRecyclerAdapter(this, it) }!!
 
         val layoutManager = LinearLayoutManager(this)
         recycler_view.layoutManager = layoutManager
@@ -31,12 +42,32 @@ class MainActivity : AppCompatActivity() {
         fab.setOnClickListener {
             shareIntent()
         }
+
+
+        var retrieveWeather: RetrieveWeather = ServiceBuilder.builderService(RetrieveWeather::class.java)
+
+
+
+        retrieveWeather.data?.enqueue(
+                object : Callback<OuterContainer?> {
+                    override fun onResponse(call: Call<OuterContainer?>, response: Response<OuterContainer?>) {
+
+                        //textView.setText(response.body().toString());
+                        if (response.isSuccessful) {
+                            weatherList = response.body() as List<OuterContainer>?
+                            adapter.setDataListing(weatherList)
+                        }
+                    }
+
+                    override fun onFailure(call: Call<OuterContainer?>, t: Throwable) {
+
+
+                        Toast.makeText(this@MainActivity, t.message + "-----" + t.cause, Toast.LENGTH_SHORT).show()
+                    }
+                })
+
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.options, menu)
-        return super.onCreateOptionsMenu(menu)
-    }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         val id = item.itemId

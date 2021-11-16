@@ -14,7 +14,7 @@ import com.glencconnnect.shumbamoneyweather.R
 import com.glencconnnect.shumbamoneyweather.models.OuterContainer
 import com.glencconnnect.shumbamoneyweather.ui.DetailView
 
-class WeatherRecyclerAdapter(private val context: Context, private var weatherList:List<OuterContainer>): RecyclerView.Adapter<WeatherRecyclerAdapter.MyViewHolder>() {
+class WeatherRecyclerAdapter(private val context: Context, private var weatherList: List<OuterContainer>): RecyclerView.Adapter<WeatherRecyclerAdapter.MyViewHolder>() {
 
 
 
@@ -59,6 +59,11 @@ class WeatherRecyclerAdapter(private val context: Context, private var weatherLi
                     )
             )
         }
+    }
+
+    fun setDataListing(weatherList: List<OuterContainer?>?) {
+        this.weatherList = weatherList as List<OuterContainer>
+        notifyDataSetChanged()
     }
 
     override fun getItemCount(): Int  = weatherList.size
