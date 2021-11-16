@@ -63,11 +63,11 @@ class WeatherRecyclerAdapter(private val context: Context, private var weatherLi
         //get the weather list
 
         //get the weather list
-        val weather: ArrayList<Weather> = weatherList[position].weather
-        val weatherDescription: String = weather[0].description
+        val weather: ArrayList<Weather?>? = weatherList[position].weather
+        val weatherDescription: String = weather?.get(0)!!.description
         //get icon, add url string first then the image name retrieved from json response
         //get icon, add url string first then the image name retrieved from json response
-        val icon: String = ApiConstants.ICON_URL + weather[0].icon.toString() + ".png"
+        val icon: String = ApiConstants.ICON_URL + weather?.get(0)!!.icon.toString() + ".png"
 
         val humidity: String = java.lang.String.valueOf(weatherList[position].getMain().humidity)
         val pressure: String = java.lang.String.valueOf(weatherList[position].getMain().pressure)

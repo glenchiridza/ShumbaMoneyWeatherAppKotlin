@@ -6,7 +6,7 @@ package com.glencconnnect.shumbamoneyweather.models
 import com.google.gson.annotations.SerializedName
 import java.util.*
 
-class List(@field:SerializedName("dt") var dt: Long, @field:SerializedName("sunrise") var sunrise: Long, @field:SerializedName("sunset") var sunset: Long, main: Main, weather: ArrayList<Weather>, dt_txt: String) {
+class List(@field:SerializedName("dt") var dt: Long, @field:SerializedName("sunrise") var sunrise: Long, @field:SerializedName("sunset") var sunset: Long, main: Main, weather: ArrayList<Weather?>?, dt_txt: String) {
 
     //the temperature is an object inside the List, so it will appear in here, which in itself contains a list of items
     @SerializedName("main")
@@ -14,7 +14,7 @@ class List(@field:SerializedName("dt") var dt: Long, @field:SerializedName("sunr
 
     //the Weather is an object inside the List, so it will appear in here, which in itself contains a list of items
     @SerializedName("weather")
-    var weather: ArrayList<Weather>
+    var weather: ArrayList<Weather?>?
 
     @SerializedName("dt_txt")
     var dt_txt: String

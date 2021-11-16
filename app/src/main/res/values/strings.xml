@@ -13,5 +13,6 @@
     <string name="feels_like">Feels Like</string>
     <string name="hot">HOT</string>
     <string name="cold">COLD</string>
+    <string name="share">Share</string>
 
 </resources>
