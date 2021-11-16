@@ -11,9 +11,10 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.glencconnnect.shumbamoneyweather.R
+import com.glencconnnect.shumbamoneyweather.models.OuterContainer
 import com.glencconnnect.shumbamoneyweather.ui.DetailView
 
-class WeatherRecyclerAdapter(private val context: Context): RecyclerView.Adapter<WeatherRecyclerAdapter.MyViewHolder>() {
+class WeatherRecyclerAdapter(private val context: Context, private var weatherList:List<OuterContainer>): RecyclerView.Adapter<WeatherRecyclerAdapter.MyViewHolder>() {
 
 
 
@@ -36,10 +37,13 @@ class WeatherRecyclerAdapter(private val context: Context): RecyclerView.Adapter
 */
         //bind the view elements , use holder to access the views and set their representational data from the data received from api
 
-        val city: String = weatherList.get(position).getCity().getName()
-        val date: String = weatherList.get(position).getList().get(position).getDt_txt()
-        val weatherDescription: String = weatherList.get(position).getList().get(position).getWeather().get(position).getDescription()
-        val degrees: String = java.lang.String.valueOf(weatherList.get(position).getList().get(position).getMain().getTemp())
+        val city: String = weatherList[position].city?.name ?: "Harare"
+
+        val date: String = weatherList[position].list?.get(position)?.dt_txt ?: ""
+
+        val weatherDescription: String = weatherList[position].list?.get(position)?.weather?.get(position)?.description
+                ?: "clear"
+        val degrees: String = java.lang.String.valueOf(weatherList[position].list?.get(position)?.getMain()?.temp)
 
 
         holder.wCity.text = city
@@ -57,7 +61,7 @@ class WeatherRecyclerAdapter(private val context: Context): RecyclerView.Adapter
         }
     }
 
-    override fun getItemCount(): Int  = 15
+    override fun getItemCount(): Int  = weatherList.size
 
 
     inner class MyViewHolder(var itemView: View):RecyclerView.ViewHolder(itemView){
