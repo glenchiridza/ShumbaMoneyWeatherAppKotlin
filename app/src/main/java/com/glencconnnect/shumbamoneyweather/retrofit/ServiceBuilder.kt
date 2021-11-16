@@ -1,12 +1,13 @@
 /**
  * Created by glenc on Nov 2021
  */
-package com.glencconnnect.shumbamoneweather.retrofit
-//using retrofit libray to grab api data serialize the model class that will be assigned the retrieved data
-//gonna pass the Class type in (s) required to the buildService function, its a generic function
-import com.glencconnnect.shumbamoneweather.constants.ApiConstants
+package com.glencconnnect.shumbamoneyweather.retrofit
+import com.glencconnnect.shumbamoneyweather.constants.ApiConstants
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+
+//using retrofit libray to grab api data serialize the model class that will be assigned the retrieved data
+//gonna pass the Class type in (s) required to the buildService function, its a generic function
 
 object ServiceBuilder {
     //create retrofit builder instance and call on it the static functions that allow the setting on of base url and
