@@ -69,7 +69,5 @@ class WeatherRecyclerAdapter(private val context: Context, private var weatherLi
         var wCity:TextView = itemView.findViewById(R.id.txt_city)
         var wDegrees:TextView = itemView.findViewById(R.id.txt_degrees)
         var wWeather:TextView = itemView.findViewById(R.id.txt_weather)
-
-
     }
 }
