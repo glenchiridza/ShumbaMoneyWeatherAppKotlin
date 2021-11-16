@@ -9,4 +9,9 @@
     <string name="developer_info">Developer: glenchiridza \\n email: glenchiridz@gmail.com \\n glenchiridza.web.app</string>
     <string name="andro_version">SM-Version 1.0</string>
     <string name="extra_share_app_text">hi, we are Shumba Money, try this new weather app\n download on playstore \n or visit www.shumbamoney.com</string>
+    <string name="error_message">We encountered a problem while retrieving data, please make sure you are connected to the internet in order to get results. Click refresh button</string>
+    <string name="feels_like">Feels Like</string>
+    <string name="hot">HOT</string>
+    <string name="cold">COLD</string>
+
 </resources>
