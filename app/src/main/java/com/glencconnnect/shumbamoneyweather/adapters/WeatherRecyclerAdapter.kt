@@ -19,27 +19,40 @@ class WeatherRecyclerAdapter(private val context: Context): RecyclerView.Adapter
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val view:View = LayoutInflater.from(parent.context).inflate(
-            R.layout.detail_item,
-            parent,
-            false
+                R.layout.detail_item,
+                parent,
+                false
         )
         return MyViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
 
-        //bind the view elements , use holder to access the views and set their representational data from the data received from api
+       /* //bind the view elements , use holder to access the views and set their representational data from the data received from api
         holder.wCity.text = "Harare"
         holder.wDate.text = "Tuesday 11/11/21"
         holder.wWeather.text = "Partly Cloudy"
         holder.wDegrees.text = "24 Degrees"
+*/
+        //bind the view elements , use holder to access the views and set their representational data from the data received from api
+
+        val city: String = weatherList.get(position).getCity().getName()
+        val date: String = weatherList.get(position).getList().get(position).getDt_txt()
+        val weatherDescription: String = weatherList.get(position).getList().get(position).getWeather().get(position).getDescription()
+        val degrees: String = java.lang.String.valueOf(weatherList.get(position).getList().get(position).getMain().getTemp())
+
+
+        holder.wCity.text = city
+        holder.wDate.text = date
+        holder.wWeather.text = weatherDescription
+        holder.wDegrees.text = degrees
 
         holder.itemView.setOnClickListener { view: View? ->
             context.startActivity(
-                Intent(
-                    context,
-                    DetailView::class.java
-                )
+                    Intent(
+                            context,
+                            DetailView::class.java
+                    )
             )
         }
     }
