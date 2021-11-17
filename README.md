@@ -21,11 +21,11 @@ https://drive.google.com/file/d/1A6XS94eSxC6nzPISIfnCqEkJdD7v4dox/view?usp=shari
 
 # Preview
 
-![shumbamoneyweather](https://github.com/glenchiridza/ShumbaMoneyWeatherAppKotlin/images/1.png)
-![shumbamoneyweather](https://github.com/glenchiridza/ShumbaMoneyWeatherAppKotlin/images/3.png)
-![shumbamoneyweather](https://github.com/glenchiridza/ShumbaMoneyWeatherAppKotlin/images/4.png)
-![shumbamoneyweather](https://github.com/glenchiridza/ShumbaMoneyWeatherAppKotlin/images/5.png)
-![shumbamoneyweather](https://github.com/glenchiridza/ShumbaMoneyWeatherAppKotlin/images/7.png)
+![shumbamoneyweather](https://github.com/glenchiridza/ShumbaMoneyWeatherAppKotlin/blob/master/images/1.png)
+![shumbamoneyweather](https://github.com/glenchiridza/ShumbaMoneyWeatherAppKotlin/blob/master/images/3.png)
+![shumbamoneyweather](https://github.com/glenchiridza/ShumbaMoneyWeatherAppKotlin/blob/master/images/4.png)
+![shumbamoneyweather](https://github.com/glenchiridza/ShumbaMoneyWeatherAppKotlin/blob/master/images/5.png)
+![shumbamoneyweather](https://github.com/glenchiridza/ShumbaMoneyWeatherAppKotlin/blob/master/images/7.png)
 
 Happy coding
 @glenchiridza
