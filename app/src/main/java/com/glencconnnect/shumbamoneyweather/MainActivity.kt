@@ -7,7 +7,7 @@ import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.glencconnnect.shumbamoneyweather.R
+
 import com.glencconnnect.shumbamoneyweather.adapters.WeatherRecyclerAdapter
 import com.glencconnnect.shumbamoneyweather.models.OuterContainer
 import com.glencconnnect.shumbamoneyweather.retrofit.RetrieveWeather

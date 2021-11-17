@@ -12,7 +12,6 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.glencconnnect.shumbamoneyweather.R
 import com.glencconnnect.shumbamoneyweather.constants.ApiConstants
-import com.glencconnnect.shumbamoneyweather.models.OuterContainer
 import com.glencconnnect.shumbamoneyweather.models.Weather
 import com.glencconnnect.shumbamoneyweather.ui.DetailView
 import java.util.*
@@ -73,7 +72,7 @@ class WeatherRecyclerAdapter(private val context: Context, private var weatherLi
         val pressure: String = java.lang.String.valueOf(weatherList[position].getMain().pressure)
 
         holder.wCity.text = city
-       // holder.wDate.text = date
+       holder.wDate.text = date
         holder.wWeather.text = weatherDescription
         holder.wDegrees.text = deg_sb
 
@@ -89,7 +88,7 @@ class WeatherRecyclerAdapter(private val context: Context, private var weatherLi
         weatherData.add(4, pressure)
         weatherData.add(5, icon)
 
-        holder.itemView.setOnClickListener { view: View? ->
+        holder.mItemView.setOnClickListener {
             val detailIntent = Intent(context, DetailView::class.java)
             detailIntent.putExtra(WeatherRecyclerAdapter.WEATHER_DATA, weatherData)
             context.startActivity(detailIntent)
@@ -101,10 +100,13 @@ class WeatherRecyclerAdapter(private val context: Context, private var weatherLi
     override fun getItemCount(): Int  = weatherList.size
 
 
-    inner class MyViewHolder(var itemView: View):RecyclerView.ViewHolder(itemView){
-//        var wDate:TextView = itemView.findViewById(R.id.txt_date)
-        var wCity:TextView = itemView.findViewById(R.id.txt_city)
-        var wDegrees:TextView = itemView.findViewById(R.id.txt_degrees)
-        var wWeather:TextView = itemView.findViewById(R.id.txt_weather)
+    inner class MyViewHolder(var mItemView: View):RecyclerView.ViewHolder(mItemView),View.OnClickListener{
+       var wDate:TextView = mItemView.findViewById(R.id.txt_date)
+        var wCity:TextView = mItemView.findViewById(R.id.txt_city)
+        var wDegrees:TextView = mItemView.findViewById(R.id.txt_degrees)
+        var wWeather:TextView = mItemView.findViewById(R.id.txt_weather)
+        override fun onClick(p0: View?) {
+
+        }
     }
 }
