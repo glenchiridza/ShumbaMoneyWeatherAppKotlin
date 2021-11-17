@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ShumbaMoneyWeather</string>
+    <string name="app_name">SM-Weather</string>
     <string name="weather_forecast">Weather Forecast</string>
     <string name="about">About</string>
     <string name="credits">Credits</string>
