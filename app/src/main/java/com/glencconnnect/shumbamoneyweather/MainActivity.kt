@@ -57,10 +57,10 @@ class MainActivity : AppCompatActivity() {
 
         retrieveWeather.data?.enqueue(object : Callback<OuterContainer?> {
             override fun onResponse(call: Call<OuterContainer?>, response: Response<OuterContainer?>) {
-                progressing!!.visibility = View.GONE
-                fab_refresh!!.visibility = View.GONE
-                textView!!.visibility = View.GONE
-                shumba_img!!.visibility = View.GONE
+                progressing?.visibility = View.GONE
+                fab_refresh?.visibility = View.GONE
+                textView?.visibility = View.GONE
+                shumba_img?.visibility = View.GONE
                 if (response.isSuccessful) {
                     val listing: OuterContainer? = response.body()
                     val list: ArrayList<com.glencconnnect.shumbamoneyweather.models.List> = listing!!.getList()
@@ -70,11 +70,11 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onFailure(call: Call<OuterContainer?>, t: Throwable) {
-                progressing!!.visibility = View.GONE
-                shumba_img!!.visibility = View.VISIBLE
-                fab_refresh!!.visibility = View.VISIBLE
+                progressing?.visibility = View.GONE
+                shumba_img?.visibility = View.VISIBLE
+                fab_refresh?.visibility = View.VISIBLE
                 //the default error value in textview will be retained here from layout string resource, if no response
-                textView!!.visibility = View.VISIBLE
+                textView?.visibility = View.VISIBLE
             }
         })
     }

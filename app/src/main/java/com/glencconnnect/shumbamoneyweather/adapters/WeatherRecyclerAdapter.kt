@@ -34,7 +34,7 @@ class WeatherRecyclerAdapter(private val context: Context, private var weatherLi
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val view:View = LayoutInflater.from(parent.context).inflate(
-                R.layout.detail_item,
+                R.layout.list_item,
                 parent,
                 false
         )
@@ -73,10 +73,9 @@ class WeatherRecyclerAdapter(private val context: Context, private var weatherLi
         val pressure: String = java.lang.String.valueOf(weatherList[position].getMain().pressure)
 
         holder.wCity.text = city
-        holder.wDate.text = date
+       // holder.wDate.text = date
         holder.wWeather.text = weatherDescription
         holder.wDegrees.text = deg_sb
-
 
         //pass the content to the intent being started
 
@@ -103,7 +102,7 @@ class WeatherRecyclerAdapter(private val context: Context, private var weatherLi
 
 
     inner class MyViewHolder(var itemView: View):RecyclerView.ViewHolder(itemView){
-        var wDate:TextView = itemView.findViewById(R.id.txt_date)
+//        var wDate:TextView = itemView.findViewById(R.id.txt_date)
         var wCity:TextView = itemView.findViewById(R.id.txt_city)
         var wDegrees:TextView = itemView.findViewById(R.id.txt_degrees)
         var wWeather:TextView = itemView.findViewById(R.id.txt_weather)
