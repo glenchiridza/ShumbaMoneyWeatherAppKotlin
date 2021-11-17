@@ -9,6 +9,13 @@
 
 Simply clone this project and run in in your android Studio IDE
 
+# Preview
 
+![shumbamoneyweather](https://github.com/glenchiridza/ShumbaMoneyWeatherAppKotlin/images1.png)
+![shumbamoneyweather](https://github.com/glenchiridza/ShumbaMoneyWeatherAppKotlin/images3.png)
+![shumbamoneyweather](https://github.com/glenchiridza/ShumbaMoneyWeatherAppKotlin/images4.png)
+![shumbamoneyweather](https://github.com/glenchiridza/ShumbaMoneyWeatherAppKotlin/images5.png)
+![shumbamoneyweather](https://github.com/glenchiridza/ShumbaMoneyWeatherAppKotlin/images7.png)
 
+Happy coding
 @glenchiridza
