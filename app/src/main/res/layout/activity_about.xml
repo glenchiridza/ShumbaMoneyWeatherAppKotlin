@@ -38,6 +38,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
+        android:textAlignment="center"
         android:gravity="fill_horizontal"
         android:text="We are committed at rendering the most efficient service, and for the harare community, we have developed this app with love. The aim is to bring you awareness of what to expect tomorrow. Our weather service are more reliable. Thank you for downloading this app"
         app:layout_constraintEnd_toEndOf="parent"
